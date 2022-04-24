@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://images/21 Gradient Backgrounds Wallpapers Images Pictures.jpg" type="Texture" id=1]
+[ext_resource path="res://fonts/Poppins-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://server.gd" type="Script" id=4]
+[ext_resource path="res://Questions.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="window" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -191.0
+margin_top = -9.0
+margin_right = 147.0
+margin_bottom = 67.0
+theme = ExtResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "waiting for player..."
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -464.0
+margin_top = -167.0
+margin_right = 452.0
+margin_bottom = -76.0
+custom_fonts/font = SubResource( 3 )
+text = "Welcome to Multiplayer Quiz"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -395.0
+margin_top = 96.0
+margin_right = 110.0
+margin_bottom = 200.0
+theme = ExtResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Number of players connected"
+
+[node name="num" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 151.0
+margin_top = 93.0
+margin_right = 204.0
+margin_bottom = 166.0
+theme = ExtResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "0"
+fit_content_height = true
+
+[node name="name" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 309.0
+margin_top = 90.0
+margin_right = 792.0
+margin_bottom = 163.0
+theme = ExtResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
+fit_content_height = true
+
+[node name="Control" parent="." instance=ExtResource( 5 )]
+visible = false
